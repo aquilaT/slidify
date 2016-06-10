@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny Application and Reproducible Pitch</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny Application and Reproducible Pitch">
+  <meta name="author" content="Andrey (AquilaT)">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny Application and Reproducible Pitch</h1>
+    <h2>Course Project for the Coursera &quot;Developing Data Products&quot;</h2>
+    <p>Andrey (AquilaT)<br/>10 Jun 2016</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>PROJECT SUMMARY</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is the final presentation for the Course Project of the Coursera &#39;Developing data products&#39; course</p>
+
+<p>This assignment has two parts: (1) creating a Shiny interactive application and (2) creating the reproducible pitch presentation describing this application.</p>
+
+<p>My Shiny Application is using various inputs to simulating Standard Normal distribution charts with custom parameters </p>
+
+<p>The Source code for ui.R and server.R files are available on the GitHub repo: <a href="https://github.com/aquilaT/9_developing_data_products">https://github.com/aquilaT/9_developing_data_products</a> </p>
+
+<p>The App is available at Shiny server following the link: <a href="https://aquilat.shinyapps.io/shinyapp/">https://aquilat.shinyapps.io/shinyapp/</a> </p>
+
+<p>This Reproducible Pitch presentation was created using Slidify. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>APP&#39;s KEY FUNCTIONALITY</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>My Web Application functionality:</p>
+
+<p>I developed my Shiny Web application for those students who study Statistics. Visualization of how different statistical distribution functions will change should help students to better visualize and memorize:</p>
+
+<ol>
+<li>how major stat charts (PDF, CDF, Random draws from Standard Normal) look like under different parameters</li>
+<li>how these charts will change if we change major parameters: Mean, Standard </li>
+<li>availability of 3 sets of charts on 1 plot allows for better comparison and understanding</li>
+</ol>
+
+<p>Live and interactive visualization of inputs and outputs is an excellent way to deeper learn, &quot;sense&quot; and understand the concept of NORMAL GAUSSIAN DISTRIBUTION CHARTS. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>R CODE ESSENTIALS</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>My App generates 3 independent sets of major Normal distribution&#39;s curves.</p>
+
+<p>INPUT:</p>
+
+<ul>
+<li>For generating various independent inputs, 3 sets of sliderInput are used</li>
+<li>for each of 3 curves I put 2 variable parameters: STANDARD DEVIATION and MEAN</li>
+<li>ST DEVIATION varies in the range of 1....5 (default values are 1,2,3 for each of 3 curves)</li>
+<li>MEAN can vary in the range -10....+10 (default values is 0 for each of 3 curves)</li>
+</ul>
+
+<p>OUTPUT:</p>
+
+<ul>
+<li>To generate PDF, CDF, and Random draws I used R functions dnorm(), pnorm(), rnorm()</li>
+</ul>
+
+<pre><code class="r">densities   &lt;- dnorm(x, mean1, sd1)
+cumulative &lt;-pnorm(x, mean1, sd1)
+randomdeviates &lt;-rnorm(1000, mean1, sd1)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>RUNNING SIMULATIONS</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We can set 6 parameters independently to observe various combinations. The charts with default MEAN and ST DEV parameters look like below:  </p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='PROJECT SUMMARY'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='APP&#39;s KEY FUNCTIONALITY'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='R CODE ESSENTIALS'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='RUNNING SIMULATIONS'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
